@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
-/dist/
+# We intentionally ignore dist to use github as a cdn
 
 # local env files
 .env.local
