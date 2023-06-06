@@ -65,10 +65,9 @@ const config = (env = {}) => ({
       filename: '[name].css',
     }),
     new container.ModuleFederationPlugin({
-      name: 'home',
+      name: 'vueButton',
       filename: 'remoteEntry.js',
       remotes: {
-        home: 'home@http://localhost:3002/remoteEntry.js',
       },
       exposes: {
         './VueButton': './src/components/VueButton',

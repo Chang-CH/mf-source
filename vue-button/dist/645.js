@@ -32,7 +32,7 @@ var reactivity_esm_bundler = __webpack_require__(262);
 
 /* harmony default export */ const Appvue_type_script_lang_js = ({
   components: {
-    VueButton: (0,runtime_core_esm_bundler/* defineAsyncComponent */.RC)(() => __webpack_require__.e(/* import() */ 597).then(__webpack_require__.bind(__webpack_require__, 595))),
+    VueButton: (0,runtime_core_esm_bundler/* defineAsyncComponent */.RC)(() => __webpack_require__.e(/* import() */ 595).then(__webpack_require__.bind(__webpack_require__, 595))),
   },
   setup() {
     const count = (0,reactivity_esm_bundler/* ref */.iH)(0);
