@@ -26,7 +26,7 @@ const federationConfig = {
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:8081/",
+    publicPath: "https://chang-ch.github.io/mf-source/ReactButton/",
   },
 
   infrastructureLogging: {

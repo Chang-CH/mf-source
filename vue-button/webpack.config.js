@@ -21,7 +21,7 @@ const config = (env = {}) => ({
   //   publicPath: '/dist/'
   // },
   output: {
-    publicPath: 'auto',
+    publicPath: "https://chang-ch.github.io/mf-source/VueButton/",
   },
   resolve: {
     extensions: ['.vue', '.jsx', '.js', '.ts', '.tsx', '.json'],
