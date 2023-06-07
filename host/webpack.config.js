@@ -10,8 +10,8 @@ const federationConfig = {
   filename: "remoteEntry.js",
   remotes: {
     // vueButton: `vueButton@https://chang-ch.github.io/mf-source/remoteEntry.js`,
-    vueButton: `vueButton@http://localhost:8082/remoteEntry.js`,
-    reactButton: `reactButton@http://localhost:8081/remoteEntry.js`,
+    vueButton: `vueButton@https://chang-ch.github.io/mf-source/VueButton/remoteEntry.js`,
+    reactButton: `reactButton@https://chang-ch.github.io/mf-source/ReactButton/remoteEntry.js`,
   },
 
   exposes: {},
@@ -31,7 +31,7 @@ const federationConfig = {
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "https://chang-ch.github.io/mf-source/",
   },
 
   infrastructureLogging: {
