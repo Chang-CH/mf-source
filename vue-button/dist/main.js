@@ -6,7 +6,7 @@
 
 // https://webpack.js.org/concepts/module-federation/#uncaught-error-shared-module-is-not-available-for-eager-consumption
 //@ts-ignore
-Promise.all(/* import() */[__webpack_require__.e(780), __webpack_require__.e(645)]).then(__webpack_require__.bind(__webpack_require__, 645));
+Promise.all(/* import() */[__webpack_require__.e(780), __webpack_require__.e(252), __webpack_require__.e(722)]).then(__webpack_require__.bind(__webpack_require__, 722));
 
 /***/ })
 
@@ -290,7 +290,7 @@ Promise.all(/* import() */[__webpack_require__.e(780), __webpack_require__.e(645
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"595":1,"645":1};
+/******/ 			var cssChunks = {"325":1,"722":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {

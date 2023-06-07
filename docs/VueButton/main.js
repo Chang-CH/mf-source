@@ -1,42 +1,12 @@
-var home;
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 19:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ 990:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-var moduleMap = {
-	"./VueButton": () => {
-		return Promise.all([__webpack_require__.e(265), __webpack_require__.e(595)]).then(() => (() => ((__webpack_require__(595)))));
-	}
-};
-var get = (module, getScope) => {
-	__webpack_require__.R = getScope;
-	getScope = (
-		__webpack_require__.o(moduleMap, module)
-			? moduleMap[module]()
-			: Promise.resolve().then(() => {
-				throw new Error('Module "' + module + '" does not exist in container.');
-			})
-	);
-	__webpack_require__.R = undefined;
-	return getScope;
-};
-var init = (shareScope, initScope) => {
-	if (!__webpack_require__.S) return;
-	var name = "default"
-	var oldScope = __webpack_require__.S[name];
-	if(oldScope && oldScope !== shareScope) throw new Error("Container initialization failed as it has already been initialized with a different share scope");
-	__webpack_require__.S[name] = shareScope;
-	return __webpack_require__.I(name, initScope);
-};
-
-// This exports getters to disallow modifications
-__webpack_require__.d(exports, {
-	get: () => (get),
-	init: () => (init)
-});
+// https://webpack.js.org/concepts/module-federation/#uncaught-error-shared-module-is-not-available-for-eager-consumption
+//@ts-ignore
+Promise.all(/* import() */[__webpack_require__.e(780), __webpack_require__.e(252), __webpack_require__.e(722)]).then(__webpack_require__.bind(__webpack_require__, 722));
 
 /***/ })
 
@@ -189,55 +159,6 @@ __webpack_require__.d(exports, {
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/remotes loading */
-/******/ 	(() => {
-/******/ 		var chunkMapping = {};
-/******/ 		var idToExternalAndNameMapping = {};
-/******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
-/******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
-/******/ 				chunkMapping[chunkId].forEach((id) => {
-/******/ 					var getScope = __webpack_require__.R;
-/******/ 					if(!getScope) getScope = [];
-/******/ 					var data = idToExternalAndNameMapping[id];
-/******/ 					if(getScope.indexOf(data) >= 0) return;
-/******/ 					getScope.push(data);
-/******/ 					if(data.p) return promises.push(data.p);
-/******/ 					var onError = (error) => {
-/******/ 						if(!error) error = new Error("Container missing");
-/******/ 						if(typeof error.message === "string")
-/******/ 							error.message += '\nwhile loading "' + data[1] + '" from ' + data[2];
-/******/ 						__webpack_require__.m[id] = () => {
-/******/ 							throw error;
-/******/ 						}
-/******/ 						data.p = 0;
-/******/ 					};
-/******/ 					var handleFunction = (fn, arg1, arg2, d, next, first) => {
-/******/ 						try {
-/******/ 							var promise = fn(arg1, arg2);
-/******/ 							if(promise && promise.then) {
-/******/ 								var p = promise.then((result) => (next(result, d)), onError);
-/******/ 								if(first) promises.push(data.p = p); else return p;
-/******/ 							} else {
-/******/ 								return next(promise, d, first);
-/******/ 							}
-/******/ 						} catch(error) {
-/******/ 							onError(error);
-/******/ 						}
-/******/ 					}
-/******/ 					var onExternal = (external, _, first) => (external ? handleFunction(__webpack_require__.I, data[0], 0, external, onInitialized, first) : onError());
-/******/ 					var onInitialized = (_, external, first) => (handleFunction(external.get, data[1], getScope, 0, onFactory, first));
-/******/ 					var onFactory = (factory) => {
-/******/ 						data.p = 1;
-/******/ 						__webpack_require__.m[id] = (module) => {
-/******/ 							module.exports = factory();
-/******/ 						}
-/******/ 					};
-/******/ 					handleFunction(__webpack_require__, data[2], 0, 0, onExternal, 1);
-/******/ 				});
-/******/ 			}
-/******/ 		}
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/sharing */
 /******/ 	(() => {
 /******/ 		__webpack_require__.S = {};
@@ -365,11 +286,11 @@ __webpack_require__.d(exports, {
 /******/ 		}
 /******/ 		// object to store loaded CSS chunks
 /******/ 		var installedCssChunks = {
-/******/ 			177: 0
+/******/ 			179: 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"595":1};
+/******/ 			var cssChunks = {"325":1,"722":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
@@ -392,7 +313,7 @@ __webpack_require__.d(exports, {
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			177: 0
+/******/ 			179: 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -479,9 +400,8 @@ __webpack_require__.d(exports, {
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__(19);
-/******/ 	home = __webpack_exports__;
+/******/ 	var __webpack_exports__ = __webpack_require__(990);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=remoteEntry.js.map
+//# sourceMappingURL=main.js.map

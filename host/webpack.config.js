@@ -9,8 +9,11 @@ const federationConfig = {
   name: "host",
   filename: "remoteEntry.js",
   remotes: {
-    vueButton: `vueButton@https://raw.githubusercontent.com/Chang-CH/mf-source/main/vue-button/dist/remoteEntry.js`,
+    // vueButton: `vueButton@https://chang-ch.github.io/mf-source/remoteEntry.js`,
+    vueButton: `vueButton@http://localhost:8082/remoteEntry.js`,
+    reactButton: `reactButton@http://localhost:8081/remoteEntry.js`,
   },
+
   exposes: {},
   shared: {
     ...deps,

@@ -5,7 +5,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 
 const {container} = webpack;
-
 const config = (env = {}) => ({
   // @ts-ignore
   mode: env?.mode ?? 'development',
@@ -25,7 +24,7 @@ const config = (env = {}) => ({
     publicPath: 'auto',
   },
   resolve: {
-    extensions: ['.vue', '.jsx', '.js', '.ts', '.json'],
+    extensions: ['.vue', '.jsx', '.js', '.ts', '.tsx', '.json'],
     alias: {
       // this isn't technically needed, since the default `vue` entry for bundlers
       // is a simple `export * from '@vue/runtime-dom`. However having this
@@ -37,6 +36,10 @@ const config = (env = {}) => ({
   },
   module: {
     rules: [
+      { 
+        test: /\.tsx$/, 
+        use: ['babel-loader']
+  },
       {
         test: /\.vue$/,
         use: 'vue-loader',
@@ -70,7 +73,7 @@ const config = (env = {}) => ({
       remotes: {
       },
       exposes: {
-        './VueButton': './src/components/VueButton',
+        './VueButton': './src/components/bootstrap',
       },
       shared: {
       },
@@ -85,7 +88,7 @@ const config = (env = {}) => ({
       directory:  path.resolve(),
     },
     compress: true,
-    port: 3002,
+    port: 8082,
     hot: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
